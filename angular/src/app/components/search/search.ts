@@ -13,7 +13,7 @@ import {Observable} from "rxjs";
 @Component({
     selector: 'auction-search',
     directives: [REACTIVE_FORM_DIRECTIVES],
-    templateUrl: 'app/components/search/search.html'
+    template: require('./search.html')
 })
 export default class SearchComponent {
     formModel: FormGroup;

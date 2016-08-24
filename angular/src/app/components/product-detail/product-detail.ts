@@ -11,8 +11,8 @@ import 'rxjs/Rx';
 
 @Component({
     selector: 'auction-product-page',
-    styleUrls: ['app/components/product-detail/product-detail.css'],
-    templateUrl: 'app/components/product-detail/product-detail.html',
+    styles: [require('./product-detail.css')],
+    template: require('./product-detail.html'),
     directives: [NgClass, StarsComponent]
 })
 export default class ProductDetailComponent implements OnDestroy {

@@ -9,8 +9,8 @@ import SearchComponent from '../search/search';
 
 @Component({
     selector: 'auction-application',
-    templateUrl: 'app/components/application/application.html',
-    styleUrls: ['app/components/application/application.css'],
+    styles: [require('./application.css')],
+    template: require('./application.html'),
     directives: [
         ROUTER_DIRECTIVES,
         NavbarComponent,
