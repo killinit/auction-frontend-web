@@ -20,7 +20,7 @@ export class BidService {
         let openSubscriber = Subscriber.create(
             () => this.webSocket.send({productId: productId}));
 
-        return this.webSocket.createObservableSocket(`ws://192.168.99.101/bids/${productId}/`, openSubscriber)
+        return this.webSocket.createObservableSocket(`ws://192.168.99.101/api/auction/bids/${productId}/`, openSubscriber)
             .map(message => JSON.parse(message));
     }
 }

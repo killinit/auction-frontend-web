@@ -45,6 +45,7 @@ export interface ProductSearchParams {
 export class ProductService {
     searchEvent: EventEmitter = new EventEmitter();
     headers: Headers = new Headers();
+    token: string;
 
     constructor(private http: Http) {
         this.headers.append('Content-Type', 'application/json');
@@ -53,25 +54,25 @@ export class ProductService {
     search(params: ProductSearchParams): Observable<Product[]> {
 
         return this.http
-            .get('http://192.168.99.101/api/products/', {headers: this.headers, search: encodeParams(params)})
+            .get('http://192.168.99.101/api/auction/products/', {headers: this.headers, search: encodeParams(params)})
             .map(response => response.json());
     }
 
     getProducts(): Observable<Product[]> {
         return this.http.
-            get('http://192.168.99.101/api/products/', {headers: this.headers})
+            get('http://192.168.99.101/api/auction/products/', {headers: this.headers})
             .map(response => response.json());
     }
 
     getProductById(productId: number): Observable<Product> {
         return this.http.
-            get(`http://192.168.99.101/api/products/${productId}/`, {headers: this.headers})
+            get(`http://192.168.99.101/api/auction/products/${productId}/`, {headers: this.headers})
             .map(response => response.json());
     }
 
     getReviewsForProduct(productId: number): Observable<Review[]> {
         return this.http
-            .get(`http://192.168.99.101/api/products/${productId}/reviews`, {headers: this.headers})
+            .get(`http://192.168.99.101/api/auction/products/${productId}/reviews`, {headers: this.headers})
             .map(response => response.json())
             .map(reviews => reviews.map(
                 (r: any) => new Review(r.id, r.product_id, r.product, r.user_id, r.user, r.rating, r.comment, r.created)));
@@ -79,13 +80,13 @@ export class ProductService {
 
     getAllCategories(): Observable<Category[]> {
         return this.http
-            .get(`http://192.168.99.101/api/categories/`, {headers: this.headers})
+            .get(`http://192.168.99.101/api/auction/categories/`, {headers: this.headers})
             .map(response => response.json())
     }
 
     postReview(review: Review): Observable<Review> {
         return this.http
-            .post(`http://192.168.99.101/api/reviews/`, JSON.stringify(review), {headers: this.headers})
+            .post(`http://192.168.99.101/api/auction/reviews/`, JSON.stringify(review), {headers: this.headers})
             .map(response => response.json())
     }
 

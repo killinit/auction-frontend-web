@@ -1,7 +1,6 @@
 {
   "name": "auction-frontend-web",
   "description": "Angular 2 Webpack starter project suitable for a production grade application",
-
   "private": true,
   "scripts": {
     "clean": "rimraf dist",
@@ -48,6 +47,7 @@
     "karma-jasmine": "^0.3.8",
     "karma-mocha-reporter": "^2.0.0",
     "karma-webpack": "^1.7.0",
+    "live-server": "0.8.2",
     "mkdirp": "^0.5.1",
     "node-static": "^0.7.7",
     "raw-loader": "^0.5.1",
@@ -57,8 +57,7 @@
     "ts-loader": "^0.8.1",
     "typescript": "^2.0.0-beta",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.9",
-    "webpack-dev-server": "^1.14.0",
-    "live-server": "0.8.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
   }
 }

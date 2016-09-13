@@ -23,7 +23,7 @@ Setup instructions to run this app straight from your computer below (note: you 
 
 1. Install [node.js](https://nodejs.org/en/), which comes with npm, node's package installer.
 2. Clone this repository: ``git clone https://github.com/luissalgadofreire/auction-frontend-web.git``
-3. Navigate to project root: ``cd auction-frontend-web``
+3. Navigate to project root: ``cd auction-frontend-web/angular``
 4. Install angular packages: ``npm install``
 5. Start dev server: ``npm start``
 6. Your angular app should now open in your default browser.
@@ -52,3 +52,6 @@ using docker containers: it includes an nginx web server serving the angular dem
 10. Get docker-machine ip: ``docker-machine ip auction-frontend-web-dev``
 11. Open app in browser: open your browser and navigate to the IP retrieved with the previous command, adding 
     port 8080 to it (e.g. 192.168.99.100:8080)
+
+
+10. Open web container's terminal: ``docker exec -i -t auctionfrontendweb_web_1 /bin/bash``
